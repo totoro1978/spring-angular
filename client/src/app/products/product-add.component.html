@@ -1,0 +1,24 @@
+<p>product-add works!</p>
+<form [formGroup]="addProductForm" (ngSubmit)="addProduct(addProductForm.value)">
+
+	<div>
+		<label for="prodName">
+			Product Name
+		</label>
+		<input id="prodName" type="text" formControlName="prodName">
+	</div>
+	<div>
+		<label for="prodDesc">
+			Product Description
+		</label>
+		<input id="prodDesc" type="text" formControlName="prodDesc">
+	</div>
+	<div>
+		<label for="prodPrice">
+			Product Price
+		</label>
+		<input id="prodPrice" type="text" formControlName="prodPrice">
+	</div>
+
+	<button class="button" type="submit">Add</button>
+</form>

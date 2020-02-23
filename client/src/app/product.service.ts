@@ -5,7 +5,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
 //const apiUrl = 'http://192.168.0.7:8080/api/products';
-const apiUrl = 'http://localhost:8080/api/products';
+const apiUrl = 'http://localhost:8080/api/products/';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +19,14 @@ export class ProductService {
       .pipe(
         tap(_ => this.log('fetched Products')),
         catchError(this.handleError('getProducts', []))
+      );
+  }
+
+  addProduct(data: any): Observable<any> {
+    return this.http.post<any>(apiUrl + 'addProduct', data)
+      .pipe(
+        tap(_ => this.log('addProduct')),
+        catchError(this.handleError('addProduct', []))
       );
   }
 

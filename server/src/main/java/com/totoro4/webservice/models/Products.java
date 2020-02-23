@@ -12,7 +12,16 @@ public class Products {
     String prodDesc;
     Double prodPrice;
     String prodImage;
+    String userId;
     
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
 	public Products() {
 	}
 
